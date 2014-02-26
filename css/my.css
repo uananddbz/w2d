@@ -1,0 +1,26 @@
+.row_list {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.row_list li {
+color: rgb(51, 51, 51);
+padding:.8em;
+border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.row_list li:hover {
+background-color: rgb(245, 245, 245);
+}
+
+.row_list li.success {
+background-color: rgb(223, 240, 216);
+}
+
+#loading {
+position:fixed;
+top:0;
+left:0;
+z-index:2000;
+}
