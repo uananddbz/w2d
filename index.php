@@ -39,7 +39,12 @@ z-index:2000;
 <!--LOGO-->
 
 <div class="hero-unit" style="padding:2em;margin-bottom:20px;background:transparent;">
-<h2>What's Today <small><span id="loading" class="label label-warning">please wait ...</span></small></h2>
+<h2>What's Today <small><span id="loading" class="label label-warning">please wait ...</span></small>
+<div class="btn-group">
+<button class="btn" title="ADD" data-toggle="modal" data-target="#form_modal"><i class="icon-plus"></i></button>
+<button class="btn btn-inverse" title="EDIT" data-toggle="modal" data-target="#edit_modal"><i class="icon-pencil icon-white" ></i></button>
+</div>
+</h2>
 </div>
 
 
@@ -47,10 +52,6 @@ z-index:2000;
 
 <div class="container-fluid">
 
-<div class="btn-group">
-<button class="btn" title="ADD" data-toggle="modal" data-target="#form_modal"><i class="icon-plus"></i></button>
-<button class="btn btn-inverse" title="EDIT" data-toggle="modal" data-target="#edit_modal"><i class="icon-pencil icon-white" ></i></button>
-</div>
 
 <p>
 <ul id="row_list" class="row_list">
