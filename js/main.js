@@ -36,7 +36,7 @@ if (value!=null && value!="" && Number(value))
   {
 if (value.length==4)
 {
- ajax_update(table,function() {el.replaceWith(value).effect('highlight');},'id='+id,'yy='+value);
+ ajax_update(table,function() {el.replaceWith(value);},'id='+id,'yy='+value);
 }
   }
 }
@@ -298,7 +298,7 @@ load_rows();
 
 
 //-----AUTORUN--FUNCTIONS-----
-
+$('[title]').tooltip({container:'body',delay: { show: 500, hide: 100 },trigger:'hover'})
 load_rows();
 
 });

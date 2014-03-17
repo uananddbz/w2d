@@ -38,7 +38,7 @@ z-index:2000;
 
 <!--LOGO-->
 
-<div class="hero-unit" style="padding:2em;margin-bottom:20px;">
+<div class="hero-unit" style="padding:2em;margin-bottom:20px;background:transparent;">
 <h2>What's Today <small><span id="loading" class="label label-warning">please wait ...</span></small></h2>
 </div>
 
@@ -48,9 +48,8 @@ z-index:2000;
 <div class="container-fluid">
 
 <div class="btn-group">
-<button class="btn btn-success"  data-toggle="modal" data-target="#form_modal"><i class="icon-plus icon-white"></i></button>
-<button class="btn btn-danger" data-toggle="modal" data-target="#edit_modal"><i class="icon-pencil icon-white" ></i></button>
-<button onClick="load_rows();" class="btn"><i class="icon-refresh"></i></button>
+<button class="btn" title="ADD" data-toggle="modal" data-target="#form_modal"><i class="icon-plus"></i></button>
+<button class="btn btn-inverse" title="EDIT" data-toggle="modal" data-target="#edit_modal"><i class="icon-pencil icon-white" ></i></button>
 </div>
 
 <p>
@@ -162,8 +161,11 @@ for ($i=1940; $i<=2014; $i++)
 <!--edit modal-->
 <div id="edit_modal" class="modal hide" role="dialog">
 <div class="modal-header">
-<button  onClick="edit_rows();" class="btn pull-right"><i class="icon-refresh"></i></button>
-<input type="text" onKeyUp="edit_find(this.value);" class="input-medium search-query" placeholder="search" />
+<div class="input-append">
+<input type="text" onKeyUp="edit_find(this.value);" class="input-medium" placeholder="search" />
+<span class="add-on"><i class="icon-search"></i></span>
+</div>
+
 </div>
 <div class="modal-body">
 <ul id="edit_row_list" class="row_list"></ul>
