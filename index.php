@@ -64,14 +64,16 @@ z-index:2000;
 
 <!--Add modal-->
 
-<div class="modal hide" id="form_modal" >
+<div class="modal hide" data-backdrop="static"  id="form_modal" >
   
     <div class="modal-header">
+	
     <div class="btn-group" id="select_form" data-toggle="buttons-radio">
     <button type="button" onClick="show_form($('#b_form'),'birthday');" class="btn">Birthday</button>
     <button type="button" onClick="show_form($('#a_form'),'anniversary');" class="btn">Anniversary</button>
     </div>
-
+	
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>	
     </div>
 	
     <div class="modal-body">
@@ -145,15 +147,17 @@ for ($i=1940; $i<=2014; $i++)
 
 <button type="button" onClick="set_today();" class="btn-link btn"><i class="icon-arrow-left"></i> Today</button>
 </div>
-        </div>
+        </div>		
+		
+		
+		        <div class="control-group">
+		          <div class="controls">
+<button class="btn btn-primary" type="button" data-loading-text="SAVING..." id="save_form">SAVE</button>
+	 </div></div>
+		
       </form>
-    </div>
-	
-    <div class="modal-footer">
-      <div class="btn-group">
-        <button class="btn btn-primary" type="button" onClick="save_form($(this));" data-loading-text="SAVING..." id="save_form">SAVE</button>
-        <button id="close" class="btn" data-dismiss="modal"><i class="icon-ok"></i>DONE</button>
-      </div>
+	  
+
 	  
     </div>
 
@@ -167,16 +171,14 @@ for ($i=1940; $i<=2014; $i++)
 <span class="add-on"><i class="icon-search"></i></span>
 </div>
 
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>	
+
 </div>
 <div class="modal-body">
 <ul id="edit_row_list" class="row_list"></ul>
 </div>
 
-    <div class="modal-footer">
-      <div class="btn-group">
-        <button id="close" class="btn" data-dismiss="modal"><i class="icon-ok"></i> <b>DONE</b></button>
-      </div>
-    </div>
+
 
 </div>
 

@@ -13,7 +13,7 @@ m='0'+m;
 
 //<--Defaults
 
-$(document).ajaxSend(function(){
+$(document).ajaxStart(function(){
 $("#loading").fadeIn('fast');
 });
 
@@ -86,14 +86,6 @@ $.ajax({url:"ajax.php",
 }
 }
 
-//Done button function
-function done(el,table,id)
-{	
-el.hide();
-ajax_update(table,function(result){
-el.parents('li').addClass('success');
-},'id='+id,'done=1');
-}
 
 //Delete button function
 function del(el,table,id) {
@@ -254,7 +246,7 @@ el.button('loading');
 ajax_insert(form_table,function(result) {
 hide_form();
 reset_select();
-$('#save_form').button('reset');
+el.button('reset');
 },data);
 }
 
@@ -269,6 +261,10 @@ document.getElementById("m").value=m;
 
 
 $(document).ready(function() {
+
+//make search values without case sensative
+jQuery.expr[':'].Contains = function(a,i,m){ return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0; };
+
 
 //-----BUTTON--FUNCTIONS-----
 
@@ -300,5 +296,9 @@ load_rows();
 //-----AUTORUN--FUNCTIONS-----
 $('[title]').tooltip({container:'body',delay: { show: 500, hide: 100 },trigger:'hover'})
 load_rows();
+
+$('#save_form').click(function() {
+save_form($(this));
+});
 
 });
